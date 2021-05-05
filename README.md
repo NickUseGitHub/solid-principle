@@ -24,10 +24,18 @@ Open-closed Principle (OCP) states:
 Objects or entities should be open for extension but closed for modification.
 ```
 
-## O (Liskov Substitution Principle)
+## L (Liskov Substitution Principle)
 
 Liskov Substitution Principle states:
 
 ```
 Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.
+```
+
+## I (Interface Segregation Principle)
+
+Interface segregation principle states:
+
+```
+A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.
 ```
