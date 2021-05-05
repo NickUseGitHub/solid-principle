@@ -28,6 +28,10 @@ export default class InteractSoundCheck {
   }
 
   consumeResource(index: IndexOfEnergyResource) {
+    if (typeof index !== 'number') {
+      throw new Error('InteractSoundCheck::consumeResource -- IndexOfEnergyResource is not a number');
+    }
+
     if (index >= 0) {
       delete this.energyResources[index];
       this.energyResources = this.energyResources.filter(Boolean);

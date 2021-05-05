@@ -8,6 +8,7 @@ export enum MoveDirection {
 export enum EnergyResource {
   FOOD,
   ELECTRICITY,
+  SOLARCELL,
 }
 
 export type IndexOfEnergyResource = number;

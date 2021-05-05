@@ -1,9 +1,10 @@
 import AnimalMove from '@classes/animalMove';
 import VehicleMove from '@classes/vehicleMove';
-import { EnergyResource, MoveDirection } from '@classes/types';
+import { EnergyResource, MoveDirection, SendableSound } from '@classes/types';
 import AnimalSendSound from '@classes/animalSendSound';
 import VehicleSendSound from '@classes/vehicleSendSound';
 import InteractSoundCheck from '@classes/interactSoundCheck';
+import RobotSendSound from '@classes/robotSendSound';
 
 export default function run() {
   const tigerMove = new AnimalMove({ speed: 20 });
@@ -37,5 +38,22 @@ export default function run() {
   const leftResouces = checkThingsSound.getResources();
 
   console.log('resource left:', leftResouces);
+  console.log('-------------------------------------------------------');
+
+  console.log('----------- Liskov Substitution Principle -----------');
+  const terminator = new RobotSendSound();
+  const checkThingsSoundLiskov = new InteractSoundCheck({
+    soundableObjectList: [(terminator as unknown) as SendableSound, lamboginiSound, lamboginiSound1],
+    energyResources: [
+      EnergyResource.SOLARCELL,
+      EnergyResource.FOOD,
+      EnergyResource.FOOD,
+      EnergyResource.FOOD,
+      EnergyResource.ELECTRICITY,
+      EnergyResource.ELECTRICITY,
+    ],
+  });
+
+  checkThingsSoundLiskov.checkThingsSound();
   console.log('-------------------------------------------------------');
 }
