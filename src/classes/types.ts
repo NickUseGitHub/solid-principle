@@ -21,6 +21,6 @@ export interface Ridable {
   getPassenger(amountOfPassenger: number): void;
 }
 
-export interface MovableObject extends Ridable {
+export interface MovableObject {
   move(direction: MoveDirection): number;
 }

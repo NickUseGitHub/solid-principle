@@ -1,6 +1,6 @@
-import { MovableObject, MoveDirection } from './types';
+import { MovableObject, MoveDirection, Ridable } from './types';
 
-export default class VehicleMove implements MovableObject {
+export default class VehicleMove implements MovableObject, Ridable {
   private speed: number;
 
   constructor({ speed }: { speed: number }) {

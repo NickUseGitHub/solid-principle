@@ -1,8 +1,6 @@
 import { MovableObject, MoveDirection } from './types';
 
-type UnRidableButMovableObject = Omit<MovableObject, 'getPassenger'>;
-
-export default class AnimalMove implements UnRidableButMovableObject {
+export default class AnimalMove implements MovableObject {
   private speed: number;
 
   constructor({ speed }: { speed: number }) {

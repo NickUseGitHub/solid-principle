@@ -56,4 +56,8 @@ export default function run() {
 
   checkThingsSoundLiskov.checkThingsSound();
   console.log('-------------------------------------------------------');
+
+  console.log('----------- Interface Segregation Principle -----------');
+  lamboginiMove.getPassenger(2);
+  console.log('-------------------------------------------------------');
 }
