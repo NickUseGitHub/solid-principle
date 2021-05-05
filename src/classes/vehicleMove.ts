@@ -1,6 +1,6 @@
-import { MoveDirection } from './types';
+import { MovableObject, MoveDirection } from './types';
 
-export default class VehicleMove {
+export default class VehicleMove implements MovableObject {
   private speed: number;
 
   constructor({ speed }: { speed: number }) {
@@ -9,5 +9,9 @@ export default class VehicleMove {
 
   move(direction: MoveDirection) {
     return this.speed * direction;
+  }
+
+  getPassenger(amountOfPassenger: number) {
+    console.log(`กำลังพาไปสู่ความเวิ้งว้างอันไกลโพ้นกัน ${amountOfPassenger} คน`);
   }
 }

@@ -16,3 +16,11 @@ export type IndexOfEnergyResource = number;
 export interface SendableSound {
   sendSound(energyResource: EnergyResource[]): IndexOfEnergyResource;
 }
+
+export interface Ridable {
+  getPassenger(amountOfPassenger: number): void;
+}
+
+export interface MovableObject extends Ridable {
+  move(direction: MoveDirection): number;
+}
