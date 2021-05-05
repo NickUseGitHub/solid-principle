@@ -5,6 +5,7 @@ import AnimalSendSound from '@classes/animalSendSound';
 import VehicleSendSound from '@classes/vehicleSendSound';
 import InteractSoundCheck from '@classes/interactSoundCheck';
 import RobotSendSound from '@classes/robotSendSound';
+import TaxiTransporter from '@classes/taxiTransporter';
 
 export default function run() {
   const tigerMove = new AnimalMove({ speed: 20 });
@@ -59,5 +60,12 @@ export default function run() {
 
   console.log('----------- Interface Segregation Principle -----------');
   lamboginiMove.getPassenger(2);
+  console.log('-------------------------------------------------------');
+
+  console.log('----------- Dependency Inversion Principle -----------');
+  const taxiTransporter = new TaxiTransporter();
+
+  taxiTransporter.sendPassenger([lamboginiMove]);
+
   console.log('-------------------------------------------------------');
 }
