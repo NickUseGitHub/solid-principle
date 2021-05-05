@@ -4,3 +4,8 @@ export enum MoveDirection {
   SOUTH = -1,
   WEST = -1,
 }
+
+export enum EnergyResource {
+  FOOD,
+  ELECTRICITY,
+}
