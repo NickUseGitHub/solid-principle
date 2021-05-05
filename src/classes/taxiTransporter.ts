@@ -1,12 +1,10 @@
-import { MoveDirection } from './types';
+import { MovableObject, MoveDirection, Ridable } from './types';
+
+type Transportable = Ridable & MovableObject;
 
 export default class TaxiTransporter {
-  sendPassenger(movableObjects: any[]) {
+  sendPassenger(movableObjects: Transportable[]) {
     movableObjects.forEach((movableObject) => {
-      if (typeof movableObject.getPassenger !== 'function' && typeof movableObject.move !== 'function') {
-        return;
-      }
-
       const vector = movableObject.move(MoveDirection.SOUTH);
       movableObject.getPassenger(4);
       console.log(`ไปทาง ${vector}`);
