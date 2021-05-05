@@ -4,12 +4,12 @@ import { MoveDirection } from '@classes/types';
 
 export default function run() {
   const tigerMove = new AnimalMove({ speed: 20 });
-  const lambogini = new VehicleMove({ speed: 240 });
+  const lamboginiMove = new VehicleMove({ speed: 240 });
 
   console.log('----------- check movable object -----------');
   console.log('tigerMove MoveDirection.NORTH', tigerMove.move(MoveDirection.NORTH));
   console.log('tigerMove MoveDirection.SOUTH', tigerMove.move(MoveDirection.SOUTH));
-  console.log('lambogini MoveDirection.NORTH', lambogini.move(MoveDirection.NORTH));
-  console.log('lambogini MoveDirection.SOUTH', lambogini.move(MoveDirection.SOUTH));
+  console.log('lamboginiMove MoveDirection.NORTH', lamboginiMove.move(MoveDirection.NORTH));
+  console.log('lamboginiMove MoveDirection.SOUTH', lamboginiMove.move(MoveDirection.SOUTH));
   console.log('-------------------------------------------------------');
 }
