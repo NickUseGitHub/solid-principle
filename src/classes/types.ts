@@ -9,3 +9,9 @@ export enum EnergyResource {
   FOOD,
   ELECTRICITY,
 }
+
+export type IndexOfEnergyResource = number;
+
+export interface SendableSound {
+  sendSound(energyResource: EnergyResource[]): IndexOfEnergyResource;
+}

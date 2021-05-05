@@ -23,11 +23,11 @@ export default function run() {
   const lamboginiSound = new VehicleSendSound({ voice: 'บรื้นนนนนนนน' });
   const lamboginiSound1 = new VehicleSendSound({ voice: 'บรื้นนนนนนนน1' });
   const checkThingsSound = new InteractSoundCheck({
-    objectList: [tigerSound, tigerSound1, tigerSound2, lamboginiSound, lamboginiSound1],
+    soundableObjectList: [tigerSound, tigerSound1, tigerSound2, lamboginiSound, lamboginiSound1],
     energyResources: [
-      EnergyResource.ELECTRICITY,
-      EnergyResource.ELECTRICITY,
-      EnergyResource.ELECTRICITY,
+      EnergyResource.FOOD,
+      EnergyResource.FOOD,
+      EnergyResource.FOOD,
       EnergyResource.ELECTRICITY,
       EnergyResource.ELECTRICITY,
     ],
