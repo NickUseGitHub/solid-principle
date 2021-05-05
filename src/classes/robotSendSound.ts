@@ -1,18 +1,18 @@
-import { EnergyResource } from './types';
+import { EnergyResource, IndexOfEnergyResource, SendableSound } from './types';
 import VehicleSendSound from './vehicleSendSound';
 
 type RoboType = Omit<VehicleSendSound, 'sendSound'>;
 
-export default class RobotSendSound implements RoboType {
+export default class RobotSendSound implements RoboType, SendableSound {
   private voice: string = '011101001101';
 
   getVoice() {
     return this.voice;
   }
 
-  sendSound(energyResources: EnergyResource[]): string {
+  sendSound(energyResources: EnergyResource[]): IndexOfEnergyResource {
     const voice = this.voice;
-    const noneIndex = '-1';
+    const noneIndex = -1;
     const energyType = EnergyResource.SOLARCELL;
     const errMsg = `no electricity no ${voice}`;
 
@@ -31,6 +31,6 @@ export default class RobotSendSound implements RoboType {
     console.log('Robot is now online.');
     console.log(`Robot send sound  ${voice}!!!!`);
 
-    return String(energyResources.indexOf(energyType));
+    return energyResources.indexOf(energyType);
   }
 }
