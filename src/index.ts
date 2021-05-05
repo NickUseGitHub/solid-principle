@@ -1,1 +1,4 @@
-console.log('hello world');
+import './modulizer';
+import run from './app';
+
+run();
